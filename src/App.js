@@ -10,14 +10,14 @@ function App() {
   useEffect(() => {
     axios.get('https://602e7c2c4410730017c50b9d.mockapi.io/users')
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setUserDetails(data.data[0])
         setData(data.data)
         setLoading(false)
       })
   }, [])
   const handleClick = (details) => {
-    console.log(details)
+    // console.log(details)
     setUserDetails(details)
   }
   if (loading) {
