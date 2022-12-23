@@ -60,38 +60,36 @@ function App() {
           USERS DETAILS
         </div>
         {
-          loading && <div class="spinner-border text-secondary h-100" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        }
-        {
-          <img src={avatar} alt="" className='details-img-margin' />
+          userDetails.avatar ?
+            <img src={avatar} alt="" className='details-img-margin' />
+            :
+            <img src={userDetails.avatar} alt="" className='w-25' />
         }
         <p className='fw-semibold fs-4 mt-4'>@{userDetails?.profile?.username}</p>
         <div className="mb-3 w-100 mx-auto d-flex align-items-center flex-column">
 
           <div>
             {
-              <p className="form-control text-wrap user-details-box fs-5 fw-semibold border border-dark">{userDetails?.Bio}</p>
+              <p className="form-control text-wrap user-details-box fs-5 fw-semibold border border-dark">{userDetails?.Bio ? userDetails?.Bio : "No Data Available"}</p>
             }
           </div>
           <div>
             <label className="form-label fw-semibold mt-5">Full Name</label>
             <p className="form-control text-wrap user-details-box fs-5 fw-semibold border border-dark">{
-              `${userDetails?.profile?.firstName} ${userDetails?.profile?.lastName}`
-            }</p>
+            }
+              {userDetails?.profile?.firstName || userDetails?.profile?.lastName ? `${userDetails?.profile?.firstName} ${userDetails?.profile?.lastName}` : "No Data Available"}
+            </p>
           </div>
           <div>
             <label className="form-label fw-semibold mt-2">Job Title</label>
-            <p className="form-control text-wrap user-details-box fs-5 fw-semibold border border-dark">{
-              userDetails?.jobTitle
-            }</p>
+            <p className="form-control text-wrap user-details-box fs-5 fw-semibold border border-dark">
+              {userDetails?.jobTitle ? userDetails?.jobTitle : "No Data Available"}
+            </p>
           </div>
           <div>
             <label className="form-label fw-semibold mt-2">Email</label>
-            <p className="form-control text-wrap user-details-box fs-5 fw-semibold border border-dark">{
-              userDetails?.profile?.email
-            }</p>
+            <p className="form-control text-wrap user-details-box fs-5 fw-semibold border border-dark">
+              {userDetails?.profile?.email ? userDetails?.profile?.email : "No Data Available"}</p>
           </div>
         </div>
       </div>
