@@ -27,8 +27,8 @@ function App() {
   }
 
   return (
-    <div className="App d-flex padding-top">
-      <div className='w-50'>
+    <div className="App d-flex padding-top justify-content-center">
+      <div className='me-5'>
         <div className="list-group-item mb-3 rounded-top user-heading fw-semibold text-left border-0 d-flex mx-auto justify-content-center align-items-center">
           USERS LIST
         </div>
@@ -55,7 +55,7 @@ function App() {
           }
         </div>
       </div>
-      <div className='w-50 h-100 d-flex flex-column align-items-center justify-content-center'>
+      <div className='h-100 d-flex flex-column align-items-center justify-content-center'>
         <div className="list-group-item mb-3 rounded-top user-heading fw-semibold text-left border-0 d-flex mx-auto justify-content-center align-items-center">
           USERS DETAILS
         </div>
